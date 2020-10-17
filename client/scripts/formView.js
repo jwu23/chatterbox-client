@@ -14,8 +14,9 @@ var FormView = {
       username: App.username,
       text: FormView.$form.find('#message').val()
     };
+
     Parse.create(newMessage);
-    // location.reload();
+
   },
 
   setStatus: function(active) {

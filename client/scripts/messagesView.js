@@ -10,6 +10,7 @@ var MessagesView = {
 
     for (var key in message) {
       var currentMessage = '';
+
       var fixedMessage = {
         username: message[key].username || 'Guest',
         text: message[key].text,
@@ -21,6 +22,7 @@ var MessagesView = {
       } else {
         currentMessage += MessageView.render(fixedMessage);
       }
+
       $('#chats').append(currentMessage);
     }
   }

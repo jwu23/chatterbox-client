@@ -4,12 +4,12 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
-    RoomsView.$button.on('click', console.log('test'));
+
   },
 
-  renderRoom: function() {
+  renderRoom: function(room) {
 
-    $('#rooms').append(rooms.render());
+    $('#rooms select').append(RoomView.render(room));
   }
 
 };
