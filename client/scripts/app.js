@@ -20,8 +20,10 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-
+      // console.log(data.results);
       MessagesView.renderMessage(data.results);
+      RoomsView.renderRoom(data.results);
+      // RoomsView.selectRoom(data.results);
       callback();
     });
   },
@@ -34,5 +36,11 @@ var App = {
   stopSpinner: function() {
     App.$spinner.fadeOut('fast');
     FormView.setStatus(false);
+  },
+
+  autoRefresh: function() {
+    setInterval(function() {
+      App.fetch();
+    }, 1000);
   }
 };

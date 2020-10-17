@@ -14,7 +14,8 @@ var MessagesView = {
       var fixedMessage = {
         username: message[key].username || 'Guest',
         text: message[key].text,
-        createdAt: message[key].createdAt
+        createdAt: message[key].createdAt,
+        roomname: message[key].roomname
       };
 
       if (fixedMessage.text === undefined || fixedMessage.text === '') {
@@ -24,6 +25,8 @@ var MessagesView = {
       }
 
       $('#chats').append(currentMessage);
+      Messages.push(fixedMessage);
+
     }
   }
 };
