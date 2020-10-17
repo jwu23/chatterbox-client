@@ -9,7 +9,14 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    
+
+    let newMessage = {
+      username: App.username,
+      text: FormView.$form.find('#message').val()
+    };
+
+    Parse.readAll();
+    // console.log(App.fetch());
     console.log('click!');
   },
 
