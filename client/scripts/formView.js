@@ -15,7 +15,7 @@ var FormView = {
       text: FormView.$form.find('#message').val()
     };
 
-    Parse.readAll();
+    // Parse.readAll();
     // console.log(App.fetch());
     console.log('click!');
   },

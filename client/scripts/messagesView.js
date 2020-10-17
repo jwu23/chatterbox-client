@@ -7,14 +7,20 @@ var MessagesView = {
   },
 
   renderMessage: function(message) {
-    // console.log(message.text);
-    // var currentMessage = MessageView.render();
-    // console.log("curr", currentMessage)
 
     for (var key in message) {
       var currentMessage = '';
-      currentMessage += message[key].text;
-      $('#chats').append(MessageView.render(currentMessage));
+      var fixedMessage = {
+        username: message[key].username || 'Guest',
+        text: message[key].text,
+        createdAt: message[key].createdAt.slice(11, 16)
+      };
+      if (fixedMessage.text === undefined) {
+        continue;
+      } else {
+        currentMessage += MessageView.render(fixedMessage);
+      }
+      $('#chats').append(currentMessage);
     }
   }
 };
