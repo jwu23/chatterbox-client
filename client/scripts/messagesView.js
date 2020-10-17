@@ -13,9 +13,10 @@ var MessagesView = {
       var fixedMessage = {
         username: message[key].username || 'Guest',
         text: message[key].text,
-        createdAt: message[key].createdAt.slice(11, 16)
+        createdAt: message[key].createdAt
       };
-      if (fixedMessage.text === undefined) {
+
+      if (fixedMessage.text === undefined || fixedMessage.text === '') {
         continue;
       } else {
         currentMessage += MessageView.render(fixedMessage);
