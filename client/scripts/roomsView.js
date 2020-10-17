@@ -37,6 +37,7 @@ var RoomsView = {
     }
     newRoom += RoomView.render(room);
     $('#rooms select').append(newRoom);
+    RoomsView.$select.val(room.roomName);
 
   },
 

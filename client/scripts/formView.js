@@ -4,6 +4,9 @@ var FormView = {
 
   initialize: function() {
     FormView.$form.on('submit', FormView.handleSubmit);
+    $('.submit').on('click', function() {
+      location.reload();
+    });
   },
 
   handleSubmit: function(event) {
@@ -18,6 +21,8 @@ var FormView = {
     };
 
     Parse.create(newMessage);
+
+
 
   },
 
